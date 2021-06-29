@@ -1,0 +1,8 @@
+<h1 class="text-center">Pokemon list</h1>
+
+<div class="pokemon-card">
+  <img src="../../../../assets/images/loading.png" *ngIf="showLoading" class="spinner">
+  <div *ngFor="let pokemon of pokemons" class="box" [ngClass]='colorType'>
+    <app-pokemon-card [pokemon]='pokemon'></app-pokemon-card>
+  </div>
+</div>
