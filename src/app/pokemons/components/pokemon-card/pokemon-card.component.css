@@ -1,0 +1,148 @@
+p {
+  color: #fff;
+}
+
+h2 {
+  font-weight: 900;
+}
+
+.grass {
+  border-radius: 8px;
+  background-color: green;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.fire {
+  border-radius: 8px;
+  background-color: red;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+
+}
+
+.water {
+  border-radius: 8px;
+  background-color: dodgerblue;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.bug {
+  border-radius: 8px;
+  background-color: limegreen;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.normal {
+  border-radius: 8px;
+  background-color: #808080;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.poison {
+  border-radius: 8px;
+  background-color: purple;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.ground {
+  border-radius: 8px;
+  background-color: #804000;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.electric {
+  border-radius: 8px;
+  background-color: orange;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.fairy {
+  border-radius: 8px;
+  background-color: #ff0080;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.psychic {
+  border-radius: 8px;
+  background-color: #808000;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.fighting {
+  border-radius: 8px;
+  background-color: brown;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.rock {
+  border-radius: 8px;
+  background-color: grey;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.ghost {
+  border-radius: 8px;
+  background-color: #9370DB;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.ice {
+  border-radius: 8px;
+  background-color: #58d8ff;
+  padding-top:1px;
+  padding-bottom: 1px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}

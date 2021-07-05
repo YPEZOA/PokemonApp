@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from 'src/app/services/pokemons.service';
-import { NavigationExtras } from '@angular/router';
+import { IPokemonSmall, Pokemon } from '../../interfaces/pokemon.interface';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -9,11 +9,16 @@ import { NavigationExtras } from '@angular/router';
 })
 export class PokemonListComponent implements OnInit {
 
-  pokemons: any[] = []
   showLoading!: boolean;
-  colorType: string = ''
+  colorType: any
 
   constructor(private pokeService: PokemonsService) { }
+
+  pokemons: Pokemon[] = []
+  nextPage: string = ''
+  previousPage: string = ''
+  offset: number = 0
+  limit: number = 40
 
   ngOnInit(): void {
     this.getAllPokemons();
@@ -21,34 +26,38 @@ export class PokemonListComponent implements OnInit {
 
   getAllPokemons() {
     this.showLoading = true
-    this.pokeService.allPokemon()
+    this.pokeService.allPokemon(this.limit, this.offset)
       .subscribe((resp: any) => {
-        console.log(resp);
-          resp.results.forEach((pokemon: any) => {
-            this.pokeService.pokemonInfo(pokemon.name)
-              .subscribe( result => {
-                result.types.filter(pok => pok.slot == 1)
-                  
-                  
-                  // switch (pokemon.type.name) {
-                  //   case 'bug':
-                  //     this.colorType = 'bug'
-                  //     break;
-                  //   case 'fire':
-                  //     this.colorType = 'fire'
-                  //     break;
-                  //   case 'electric':
-                  //     this.colorType = 'yellow'
-                  //     break;
-                  //   default:
-                  //     break;
-                  // }
-                  this.pokemons.push(result)
-                  this.showLoading = false
-                })
-              })
-          })
+        resp.results.forEach((pokemon: any) => this.getPokemonDetail(pokemon.name))
+        this.nextPage = resp.next
+        this.previousPage = resp.previous
       })
   }
+
+  getPokemonDetail(name: string | number) {
+    this.showLoading = true
+    this.pokeService.pokemonInfo(name)
+      .subscribe((resp: Pokemon) => {
+        this.showLoading = false
+        this.pokemons.push(resp)
+      })
+  }
+
+  getColorForType(types: any[]) {
+    return types.filter(item => item.slot === 1)[0].type.name
+  }
+
+  onNextPage() {
+    this.offset += 30
+    this.pokemons = []
+    this.getAllPokemons()
+  }
+
+  onPreviousPage() {
+    this.offset -= 30
+      this.pokemons = []
+      this.getAllPokemons()
+  }
+
 
 }

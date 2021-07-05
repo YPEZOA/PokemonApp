@@ -2,18 +2,34 @@
   font-family: monospace;
 }
 
+.container {
+  background: url('../../../../assets/images/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 30px;
+  height: 50em;
+  overflow: scroll;
+  border-radius: 15px;
+}
+
 .pokemon-card {
   width:auto;
   display: grid;
-  padding: 100px;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  grid-gap: 55px;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  grid-gap: 45px;
+  padding: 70px;
 }
 
 .pokemon-card .box {
+  box-shadow: 2px 2px 3px grey;
   width: 100%;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.432);
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.pokemon-card .box:hover {
+  transform: scale(0.9, 0.9);
+  transition: 0.5s;
 }
 
 .spinner {
@@ -22,39 +38,39 @@
   border-radius: 100%;
   animation: spin 2s linear infinite;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 25%;
   position: relative;
 }
 
 @keyframes spin{
   0%{
       background:transparent;
-      transform: rotate(720deg); 
+      transform: rotate(720deg);
   }
 }
 
 .fire {
-  background-color: red;
+  background-color: rgba(255, 91, 91, 0.699);
 }
 
 .water {
-  background-color: blue;
+  background-color: rgba(0, 119, 255, 0.445);
 }
 
 .bug {
-  background-color: rgb(115, 255, 0);
+  background-color: rgba(115, 255, 0, 0.548);
 }
 
 .electric {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.712);
 }
 
 .grass {
-  background-color:green;
+  background-color:rgba(0, 128, 0, 0.507);
 }
 
 .normal {
-  background-color: #9b9a9a;
+  background-color: #9b9a9a7c;
 }
 
 .flying {
@@ -62,5 +78,36 @@
 }
 
 .poison {
-  background-color: purple;
+  background-color: rgba(128, 0, 128, 0.548);
+}
+
+.fairy {
+  background-color: rgba(255, 189, 189, 0.781);
+}
+
+.fighting {
+  background-color: rgba(255, 36, 36, 0.582);
+}
+
+.psychic {
+  background-color: rgba(255, 255, 0, 0.534);
+}
+
+.rock {
+  background-color: rgba(109, 109, 109, 0.699);
+}
+
+.ground {
+  background-color: rgba(139, 73, 35, 0.685);
+}
+
+.ghost {
+  background-color: #4646a7a6;
+}
+
+.ice {
+  background-color: #3efdea77;
+}
+pagination-controls {
+  text-align: center;
 }

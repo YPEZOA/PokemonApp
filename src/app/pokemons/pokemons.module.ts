@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { PaginatePipe } from './pipes/paginate.pipe';
 
 
 @NgModule({
@@ -15,11 +16,15 @@ import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.com
     HeaderComponent,
     FooterComponent,
     PokemonDetailComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    PaginatePipe
   ],
   imports: [
     CommonModule,
-    PokemonsRoutingModule
+    PokemonsRoutingModule,
+  ],
+  exports: [
+    HeaderComponent
   ]
 })
 export class PokemonsModule { }

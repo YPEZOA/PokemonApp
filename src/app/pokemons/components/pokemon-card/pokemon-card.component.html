@@ -1,5 +1,7 @@
-<a [routerLink]="['/pokemons/pokemon-detail', pokemon.id]"><img [src]="pokemon.sprites.front_default" alt="pokemon" height="180px" width="180px"></a>
+<a [routerLink]="['/pokemons/pokemon-detail', pokemon.id]"><img [src]="pokemon.sprites.front_default" alt="pokemon" height="210px" width="230px"></a>
     <div class="container-info text-center">
-      <h3><strong>{{ pokemon.name }}</strong></h3>
-      <p><strong>Type:</strong> {{ pokemon.types[0].type.name}}</p>
+      <h2>{{ pokemon.name }}</h2>
+      <span><strong>Principal type:</strong></span>
+        <br>
+        <p class="{{ getColorForType(pokemon.types) }}">{{ pokemon.types[0].type.name }}</p>
     </div>

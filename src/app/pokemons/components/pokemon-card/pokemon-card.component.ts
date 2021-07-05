@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
 import { Pokemon } from '../../interfaces/pokemon.interface';
 
 @Component({
@@ -8,12 +7,17 @@ import { Pokemon } from '../../interfaces/pokemon.interface';
   styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent implements OnInit {
-  
+
   @Input() pokemon!: Pokemon
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  getColorForType(type: any[]) {
+    return this.pokemon.types.filter(item => item.slot === 1)[0].type.name
   }
 
 }

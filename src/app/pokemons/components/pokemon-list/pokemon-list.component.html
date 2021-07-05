@@ -1,8 +1,13 @@
-<h1 class="text-center">Pokemon list</h1>
-
-<div class="pokemon-card">
+<div class="container text-center">
   <img src="../../../../assets/images/loading.png" *ngIf="showLoading" class="spinner">
-  <div *ngFor="let pokemon of pokemons" class="box" [ngClass]='colorType'>
-    <app-pokemon-card [pokemon]='pokemon'></app-pokemon-card>
+  <div class="pokemon-card">
+    <div *ngFor="let pokemon of pokemons"
+      class="box {{getColorForType(pokemon.types)}}">
+      <app-pokemon-card [pokemon]='pokemon'></app-pokemon-card>
+    </div>
+  </div>
+  <div class="container-paginator" *ngIf="!showLoading">
+    <button  class="btn btn-success" (click)="onPreviousPage()">Back</button>
+    <button class="btn btn-success" (click)="onNextPage()">Next</button>
   </div>
 </div>

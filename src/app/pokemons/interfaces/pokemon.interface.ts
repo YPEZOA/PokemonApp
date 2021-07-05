@@ -1,6 +1,6 @@
 export interface IPokemonSmall {
-    name: string;
-    url:  string;
+    name?: string;
+    url?:  string;
 }
 
 export interface Pokemon {
