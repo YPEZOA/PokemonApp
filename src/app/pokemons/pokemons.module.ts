@@ -5,9 +5,8 @@ import { PokemonsRoutingModule } from './pokemons-routing.module';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
-import { PaginatePipe } from './pipes/paginate.pipe';
+import { ImageDefaultPipe } from './pipes/image-default.pipe';
 
 
 @NgModule({
@@ -15,9 +14,8 @@ import { PaginatePipe } from './pipes/paginate.pipe';
     PokemonListComponent,
     HeaderComponent,
     FooterComponent,
-    PokemonDetailComponent,
     PokemonCardComponent,
-    PaginatePipe
+    ImageDefaultPipe,
   ],
   imports: [
     CommonModule,

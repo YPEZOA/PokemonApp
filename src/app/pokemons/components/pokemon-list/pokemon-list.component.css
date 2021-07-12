@@ -28,7 +28,7 @@
 }
 
 .pokemon-card .box:hover {
-  transform: scale(0.9, 0.9);
+  transform: scale(1.1, 1.1);
   transition: 0.5s;
 }
 
@@ -44,9 +44,16 @@
 
 @keyframes spin{
   0%{
-      background:transparent;
-      transform: rotate(720deg);
+    background:transparent;
+    transform: rotate(720deg);
   }
+}
+
+.container-paginator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 40px;
 }
 
 .fire {

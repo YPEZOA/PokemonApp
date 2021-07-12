@@ -15,31 +15,35 @@ export class PokemonListComponent implements OnInit {
   constructor(private pokeService: PokemonsService) { }
 
   pokemons: Pokemon[] = []
-  nextPage: string = ''
-  previousPage: string = ''
   offset: number = 0
   limit: number = 40
+  disabledButton = false
 
   ngOnInit(): void {
     this.getAllPokemons();
   }
 
-  getAllPokemons() {
+  private getAllPokemons() {
     this.showLoading = true
     this.pokeService.allPokemon(this.limit, this.offset)
       .subscribe((resp: any) => {
         resp.results.forEach((pokemon: any) => this.getPokemonDetail(pokemon.name))
-        this.nextPage = resp.next
-        this.previousPage = resp.previous
+
       })
+
   }
 
-  getPokemonDetail(name: string | number) {
+  private getPokemonDetail(name: string | number) {
     this.showLoading = true
     this.pokeService.pokemonInfo(name)
       .subscribe((resp: Pokemon) => {
         this.showLoading = false
         this.pokemons.push(resp)
+        if (this.offset == 0) {
+          this.disabledButton = true
+        } else {
+          this.disabledButton = false
+        }
       })
   }
 
@@ -54,6 +58,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   onPreviousPage() {
+
     this.offset -= 30
       this.pokemons = []
       this.getAllPokemons()
